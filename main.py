@@ -13,4 +13,7 @@ def _gen():
     params = myutil.gen(url)
     print(params)
     return render_template("gen.html", params=params)
-app.run()
+
+
+if __name__ == '__main__':
+    app.run()
