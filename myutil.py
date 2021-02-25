@@ -10,10 +10,10 @@ APIKEY=os.environ.get('BITLY_APIKEY')
 
 def gen(url):
     img = qrcode.make(url)
-    img_path = f"static/{str(uuid.uuid4())}.png"
-    img.save(img_path)
+    imgpath = f"static/{str(uuid.uuid4())}.png"
+    img.save(imgpath)
     genurl = get_bitly_shortenurl(url)
-    return {'newurl':genurl,'img_path':img_path}
+    return {'orgurl':url, 'newurl':genurl,'imgpath':imgpath}
 
 def get_bitly_shortenurl(url):
     params=dict(

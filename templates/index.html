@@ -13,11 +13,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-      <h2>コードと短縮URL生成</h2>
-    <form action="/gen" method="POST">
-        <input name="url" size=64>
-        <button>生成</button>
-    </form>
+    <p class="h2">QRコードと短縮URL作成ツール</p>
+  <form action="/gen" method="POST">
+    <div class="form-group">
+      <label for=""></label>
+      <medium id="helpId" class="form-text text-muted">URLを入力</meduim>
+      <input type="text" class="form-control" name="url" id="" aria-describedby="helpId" placeholder="">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
