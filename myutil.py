@@ -1,4 +1,3 @@
-
 import qrcode
 import os
 import sys
@@ -22,3 +21,13 @@ def get_bitly_shortenurl(api_key, url):
     response = requests.get(APIURL, params)
     return response.json()['data']['url']
 
+def id():
+    url = "http://metadata.google.internal/computeMetadata/v1/instance/id"
+    id = ""
+    try:
+        r = requests.get(url)
+        if r.status_code == 200:
+            id = r.content
+    except:
+        id = os.uname()[1]
+    return id
