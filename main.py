@@ -16,6 +16,5 @@ def _gen():
     params = myutil.gen(APIKEY, url)
     return render_template("gen.html", params=params)
 
-
 if __name__ == '__main__':
     app.run()

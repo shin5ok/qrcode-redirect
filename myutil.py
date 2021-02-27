@@ -28,6 +28,7 @@ def id():
         r = requests.get(url)
         if r.status_code == 200:
             id = r.content
-    except:
+    except Exception as e:
+        print(str(e))
         id = os.uname()[1]
     return id
