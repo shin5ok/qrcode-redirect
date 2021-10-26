@@ -19,6 +19,7 @@ def get_bitly_shortenurl(api_key, url):
         longurl=url
     )
     response = requests.get(APIURL, params)
+    print(response.json())
     return response.json()['data']['url']
 
 def id():
