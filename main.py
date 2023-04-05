@@ -14,9 +14,7 @@ def _root():
 def _gen():
     print(request.form)
     url = request.form["url"]
-    print(APIKEY)
     params = myutil.gen(APIKEY, url)
-    print(params)
     return render_template("gen.html", params=params)
 
 if __name__ == '__main__':

@@ -10,7 +10,11 @@ def gen(api_key, url):
     img = qrcode.make(url)
     imgpath = f"static/{str(uuid.uuid4())}.png"
     img.save(imgpath)
-    genurl = get_bitly_shortenurl(api_key, url)
+    genurl = "NO_GENERATE_URL"
+    try:
+        genurl = get_bitly_shortenurl(api_key, url)
+    except Exception as e:
+        print(e)
     return {'orgurl':url, 'newurl':genurl,'imgpath':imgpath}
 
 def get_bitly_shortenurl(api_key, url):
