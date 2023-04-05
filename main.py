@@ -20,4 +20,4 @@ def _gen():
     return render_template("gen.html", params=params)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=os.environ.get("PORT", "8080"), host="0.0.0.0")
