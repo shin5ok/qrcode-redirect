@@ -1,6 +1,6 @@
 FROM python:3.11-slim
 
-COPY *.py pyproject.toml poetry.lock templates/ /
+COPY . .
 
 RUN pip install poetry
 RUN poetry config virtualenvs.create false --local && poetry install
