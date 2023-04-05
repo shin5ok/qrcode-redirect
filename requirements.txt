@@ -1,6 +1,0 @@
-requests
-pillow
-qrcode
-flask
-gunicorn
-uuid

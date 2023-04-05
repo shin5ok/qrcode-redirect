@@ -1,8 +1,7 @@
-FROM python:3.8-slim
-LABEL MAINTAINER kawanos@google.com
+FROM python:3.11-slim
 
-COPY . .
+COPY *.py pyproject.toml templates/ /
 
-RUN python -m pip install -r requirements.txt
+RUN pip install poetry && poetry install
 
-CMD exec gunicorn main:app -b 0.0.0.0:8080
+CMD poetry run gunicorn main:app -b 0.0.0.0:8080
