@@ -4,4 +4,5 @@ COPY *.py pyproject.toml templates/ /
 
 RUN pip install poetry && poetry install
 
-CMD poetry run gunicorn main:app -b 0.0.0.0:8080
+ENTRYPOINT ["/bin/bash", "-c", "poetry run gunicorn main:app -b 0.0.0.0:${PORT}"]
+# CMD poetry run python main.py
