@@ -28,11 +28,13 @@
             <td>URL</td>
             <td>{{params.orgurl}}</td>
           </tr>
+          {% if params.newrul %}
           <tr>
             <td scope="row"></td>
             <td>短縮URL</td>
             <td><a href="{{params.newurl}}">{{params.newurl}}</a></td>
           </tr>
+          {% endif %}
           <tr>
             <td scope="row"></td>
             <td>QRコード</td>
